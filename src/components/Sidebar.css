@@ -1,40 +1,73 @@
 .sidebar {
-    height: 100%;
-    width: 250px;
+    background-color: #791111;
+    color: #fff;
     position: fixed;
+    height: 100%;
     top: 0;
     left: 0;
-    background-color: #111;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding-top: 20px;
+    transition: width 0.3s ease;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.sidebar h2 {
-    color: white;
-    text-align: center;
+.sidebar.expanded {
+    width: 230px;
 }
 
-.sidebar ul {
+.sidebar.minimized {
+    width: 80px;
+}
+
+.toggle-menu {
+    display: flex;
+    align-items:last baseline;
+    margin-bottom: 20px;
+}
+
+.toggle-sidebar {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.menu-text {
+    margin-right: 50px;
+    font-size: 1.5em;
+}
+
+ul {
     list-style-type: none;
     padding: 0;
+    width: 100%;
 }
 
-.sidebar ul li {
-    padding: 10px;
-    text-align: left;
+li {
+    width: 100%;
 }
 
-.sidebar ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
+li a {
     display: flex;
     align-items: center;
+    padding: 20px;
+    color: #fff;
+    text-decoration: none;
+    width: auto;
+    transition: background-color 0.3s ease;
 }
 
-.sidebar ul li a:hover {
-    background-color: #575757;
+li a:hover {
+    background-color: #495057;
 }
 
-.sidebar ul li a svg {
-    margin-right: 10px;
+li a svg {
+    margin-right: 20px;
+}
+
+li a span {
+    display: inline-block;
 }
