@@ -1,0 +1,101 @@
+/* Default container styles */
+.option-container {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.option:hover {
+    background-color: #e0e0e0;
+}
+
+/* Styles when option is clicked */
+.option.clicked {
+    flex-direction: row;
+    justify-content: left;
+}
+
+.option.clicked .option-content {
+    margin-left: 300px;
+    display: flex;
+    flex-direction: row;
+}
+
+.option-image {
+    width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.option-text {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.option-info {
+    margin-left: 20px;
+    font-size: 0.8em;
+    padding: 10px;
+    border-radius: 5px;
+    flex: 1;
+}
+
+.sub-option {
+    flex: 1;
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    height: 200px;
+    background-color: #ccc;
+    border-radius: 5px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+
+/*icon*/
+.icon {
+    margin-top: 10px;
+    font-size: 150px;
+    color: #990000;
+}
+
+/*flashlight*/
+@keyframes flash {
+
+    0%,
+    49.99% {
+        background-color: white;
+    }
+
+    50%,
+    100% {
+        background-color: black;
+    }
+}
+
+.flashing-screen {
+    animation: flash 1s infinite;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    pointer-events: none;
+    /* Allows clicks to go through the flashing screen */
+}

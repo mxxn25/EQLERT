@@ -1,30 +1,95 @@
-import React, { useState } from 'react';
-import PictureCarousel from '../components/PictureCarousel';
+import React, { useEffect, useState } from 'react';
+import { IoFlashlight } from 'react-icons/io5';
+import { RiFirstAidKitFill, RiVolumeUpFill } from 'react-icons/ri';
+import { Link } from 'react-router-dom';
+import firstAidKitImage from '../assets/firstaidkit.png';
+import heartImage from '../assets/heart.png';
+import WhistleSound from '../assets/mixkit-police-whistle.wav';
+import './home.css';
 
 const Home = () => {
-    const [images] = useState([
-        {
-            url: 'https://ca-times.brightspotcdn.com/dims4/default/9d7866e/2147483647/strip/false/crop/5000x3333+0+0/resize/1486x991!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Ffb%2F8c%2Fb6e8796e450885f50ea8bc22dbec%2Fap23037523545482.jpg',
-            alt: 'Image 1',
-            caption: 'A man walks among rubble as he searches for people in a destroyed building in Adana, Turkey, on Monday. (Khalil Hamra / Associated Press)',
-        },
-        {
-            url: 'https://ca-times.brightspotcdn.com/dims4/default/608ad01/2147483647/strip/true/crop/5000x3333+0+0/resize/1200x800!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fd3%2F97%2F70cc78ef4d11b70042ef5dc946d2%2Fap23037537779022-1.jpg',
-            alt: 'Image 2',
-            caption: 'Emergency team members search for people in a destroyed building Monday in Adana, Turkey. (Khalil Hamra / Associated Press)',
-        },
-        {
-            url: 'https://static.euronews.com/articles/stories/08/14/55/34/828x526_cmsv2_111c693f-eaa6-51a9-ba18-eb053c3e3373-8145534.jpg',
-            alt: 'Image 3',
-            caption: 'People make their way near a collapsed building due to an earthquake in Wajima, Ishikawa prefecture, Japan',
-        }
-    ]);
+    const [clickedOption, setClickedOption] = useState(null);
+    const [playWhistle, setPlayWhistle] = useState(false);
+    const [flashing, setFlashing] = useState(false);
+
+    const handleOptionClick = (option) => {
+        setClickedOption(option === clickedOption ? null : option);
+    };
+
+    const handleClickWhistle = (e) => {
+        e.stopPropagation();
+        setPlayWhistle(true);
+        setTimeout(() => {
+            setPlayWhistle(false);
+        }, 1000);
+    };
+
+    const handleClickFlashLight = (e) => {
+        e.stopPropagation();
+        setFlashing(true);
+    };
+
+    useEffect(() => {
+        const handleClickOutside = () => {
+            setFlashing(false);
+        };
+        document.addEventListener('click', handleClickOutside);
+        return () => {
+            document.removeEventListener('click', handleClickOutside);
+        };
+    }, []);
 
     return (
         <div>
-            <PictureCarousel images={images} />
+            <h1>Home Page</h1>
+            <div className="option-container">
+                <div
+                    className={`option${clickedOption === 'survival-tools' ? ' clicked' : ''}`}
+                    onClick={() => handleOptionClick('survival-tools')}
+                >
+                    <img src={firstAidKitImage} alt="First Aid Kit" className="option-image" />
+                    <span className="option-text">Survival Tools</span>
+                    {clickedOption === 'survival-tools' && (
+                        <div className="option-content">
+                            <div className="sub-option" onClick={handleClickWhistle}>
+                                Whistle
+                                <RiVolumeUpFill className="icon" />
+                            </div>
+                            {playWhistle && <audio src={WhistleSound} loop={false} autoPlay />}
+                            <div className="sub-option" onClick={handleClickFlashLight}>
+                                Visual SOS
+                                <IoFlashlight className="icon" />
+                            </div>
+                            {flashing && <div className="flashing-screen"></div>}
+                            <div className="sub-option" onClick={(e) => { e.stopPropagation(); }}>
+                                <Link to="/first_aid" style={{ textDecoration: 'none', color: 'inherit' }}>
+                                    First Aid
+                                    <RiFirstAidKitFill className="icon" />
+                                </Link>
+                            </div>
+                        </div>
+                    )}
+                </div>
+                <div
+                    className={`option${clickedOption === 'survival-tips' ? ' clicked' : ''}`}
+                    onClick={() => handleOptionClick('survival-tips')}
+                >
+                    <img src={heartImage} alt="Heart" className="option-image" />
+                    <span className="option-text">Survival Tips</span>
+                    {clickedOption === 'survival-tips' && (
+                        <div className="option-content">
+                            <div className="sub-option">Container 1</div>
+                            <div className="sub-option">Container 2</div>
+                            <div className="sub-option">Container 3</div>
+                            <div className="sub-option">Container 4</div>
+                        </div>
+                    )}
+                </div>
+            </div>
         </div>
     );
 };
 
 export default Home;
+
+

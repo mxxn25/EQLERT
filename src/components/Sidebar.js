@@ -1,5 +1,6 @@
 import React from 'react';
-import { FaBars, FaHome, FaImages, FaInfoCircle, FaList, FaTimes } from 'react-icons/fa';
+import { FaBars, FaHome, FaImages, FaInfoCircle, FaTimes } from 'react-icons/fa';
+import { TbReportSearch } from 'react-icons/tb';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import './Sidebar.css';
@@ -24,7 +25,7 @@ const Sidebar = ({ isMinimized, toggleSidebar }) => {
                 </li>
                 <li>
                     <Link to="/dashboard">
-                        <FaList />
+                        <TbReportSearch />
                         {!isMinimized && <span> Dashboard</span>}
                     </Link>
                 </li>
@@ -35,9 +36,9 @@ const Sidebar = ({ isMinimized, toggleSidebar }) => {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/about">
+                    <Link to="/news">
                         <FaInfoCircle />
-                        {!isMinimized && <span> About</span>}
+                        {!isMinimized && <span> News</span>}
                     </Link>
                 </li>
             </ul>
