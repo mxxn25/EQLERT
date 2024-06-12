@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PictureCarousel from '../components/PictureCarousel';
 
 const Home = () => {
-    const [images, setImages] = useState([
+    const [images] = useState([
         {
             url: 'https://ca-times.brightspotcdn.com/dims4/default/9d7866e/2147483647/strip/false/crop/5000x3333+0+0/resize/1486x991!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Ffb%2F8c%2Fb6e8796e450885f50ea8bc22dbec%2Fap23037523545482.jpg',
             alt: 'Image 1',

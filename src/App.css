@@ -14,7 +14,7 @@
 }
 
 .sidebar-minimized .sidebar {
-  width: 80px;
+  width: 60px;
 }
 
 .content {
@@ -28,5 +28,5 @@
 }
 
 .sidebar-minimized .content {
-  margin-left: 80px;
+  margin-left: 60px;
 }

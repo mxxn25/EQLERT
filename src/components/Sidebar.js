@@ -1,15 +1,18 @@
 import React from 'react';
-import { FaBars, FaHome, FaImages, FaInfoCircle, FaList } from 'react-icons/fa';
+import { FaBars, FaHome, FaImages, FaInfoCircle, FaList, FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import logo from '../assets/logo.png';
 import './Sidebar.css';
 
 const Sidebar = ({ isMinimized, toggleSidebar }) => {
     return (
         <div className={`sidebar ${isMinimized ? 'minimized' : 'expanded'}`}>
             <div className="toggle-menu">
-                {!isMinimized && <span className="menu-text">Menu</span>}
+                {!isMinimized && (
+                    <img src={logo} alt="Logo" className="logo" />
+                )}
                 <button className="toggle-sidebar" onClick={toggleSidebar}>
-                    <FaBars />
+                    {isMinimized ? <FaBars /> : <FaTimes />}
                 </button>
             </div>
             <ul>
