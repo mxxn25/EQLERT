@@ -1,0 +1,38 @@
+.firstaid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    background-color: rgb(245, 245, 245);
+    padding: 20px;
+}
+
+.firstaid-item {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.firstaid-image {
+    padding: 10px;
+    width: 40%;
+    border-radius: 20px;
+}
+
+.firstaid-title {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.firstaid-description {
+    font-size: 1em;
+}
+
+.icon {
+    margin-top: 0;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-size: 20px;
+    color: #990000;
+    vertical-align: middle;
+}
