@@ -1,5 +1,13 @@
 .App {
   text-align: center;
+  background-color: #8f1414;
+  display: flex;
+}
+
+.content {
+  margin-left: 250px;
+  padding: 20px;
+  flex: 1;
 }
 
 .App-logo {
@@ -13,14 +21,12 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+header {
+  padding: 5px;
+  color: white;
+}
+
+.header-title {
   color: white;
 }
 
@@ -32,7 +38,17 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.carousel .slide {
+  background: none;
+}
+
+.carousel .legend {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
 }
