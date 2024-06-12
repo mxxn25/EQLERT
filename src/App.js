@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import './App.css';
 import Sidebar from './components/Sidebar';
+import Home from './screens/Home';
 import Dashboard from './screens/dashboard';
+import FirstAid from './screens/first_aid';
 import Gallery from './screens/gallery';
-import Home from './screens/home';
 import News from './screens/news';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
               <Route path="/dashboard" component={Dashboard} />
               <Route path="/gallery" component={Gallery} />
               <Route path="/news" component={News} />
+              <Route path="/first_aid" component={FirstAid} />
             </Switch>
           </div>
         </div>
