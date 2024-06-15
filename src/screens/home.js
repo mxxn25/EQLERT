@@ -77,11 +77,51 @@ const Home = () => {
                     <img src={heartImage} alt="Heart" className="option-image" />
                     <span className="option-text">Survival Tips</span>
                     {clickedOption === 'survival-tips' && (
-                        <div className="option-content">
-                            <div className="sub-option">Container 1</div>
-                            <div className="sub-option">Container 2</div>
-                            <div className="sub-option">Container 3</div>
-                            <div className="sub-option">Container 4</div>
+                        <div className="survival-tips-content">
+                            <div className="sub-option-tips">
+                                <div className="sub-option-title">
+                                    <p>
+                                        <strong>Before The Earthquake</strong> <br /></p>
+                                </div>
+                                <div className="sub-option-content">
+                                    <p>
+                                        <strong>Be prepared to react</strong> <br />
+                                        Know how to react so your response to a quake is automatic. If an earthquake struck right now, how would you protect yourself?
+                                    </p>
+                                </div>
+                                <div className="sub-option-content">
+                                    <p>
+                                        <strong>Know your location</strong> <br />
+                                        Identify safe spaces in the room: under a desk, along interior walls, away from windows, bookcase, and picture frames. Plan your response: know how to exit the building after an earthquake (not during) - even if the lights are off.                                    </p>
+                                </div>
+                            </div>
+                            <div className="sub-option-tips">
+                                <div className="sub-option-title">
+                                    <p>
+                                        <strong>After The Earthquake</strong> <br />
+                                    </p>
+                                </div>
+                                <div className="sub-option-content">
+                                    <p>
+                                        <strong>Remain calm as the earthquake occurs - other will respond to your actions</strong> <br />
+                                        Staying calm in groups of people is crucial and can prevent panic.
+                                    </p>
+                                </div>
+                                <div className="sub-option-content">
+                                    <p>
+                                        <strong>If you are indoors during an earthquake, stay there</strong>
+                                    </p>
+                                    <ul>
+                                        <li>Move away from windows, bookcases, and large objects.</li>
+                                        <li>Go to a safe location - under a desk, a table, or go along an interior wall.</li>
+                                        <li>If you have no protection: drop to the floor, and cover your head and face.</li>
+                                        <li>Stay under cover until after the shaking stops, and you are sure that debris is no longer falling.</li>
+                                        <li>Do not stand in a doorway, as some previous safety guidelines recommended. A swinging door can cause injuries.</li>
+                                        <li>In a crowded place, do not rush to the exit. More injuries are caused by panic than by earthquakes themselves.</li>
+                                    </ul>
+                                </div>
+
+                            </div>
                         </div>
                     )}
                 </div>
@@ -91,5 +131,3 @@ const Home = () => {
 };
 
 export default Home;
-
-

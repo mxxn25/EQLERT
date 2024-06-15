@@ -67,14 +67,46 @@
     border-bottom: 1px solid #ccc;
 }
 
-/*icon*/
+.sub-option-tips {
+    flex: 1;
+    margin: 10px;
+    padding: 10px;
+    background-color: #ccc;
+    border-radius: 5px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+
+.sub-option-content {
+    margin-top: 10px;
+    padding-left: 20px;
+    border-left: 2px solid #333;
+    text-align: left;
+}
+
+.sub-option-title {
+    margin-top: 10px;
+    padding-left: 10px;
+    text-align: left;
+}
+
+.sub-option-content p {
+    margin-bottom: 10px;
+}
+
+.survival-tips-content {
+    margin-left: 300px;
+    margin-top: 10px;
+}
+
+/* Icon */
 .icon {
     margin-top: 10px;
     font-size: 150px;
     color: #990000;
 }
 
-/*flashlight*/
+/* Flashlight */
 @keyframes flash {
 
     0%,
