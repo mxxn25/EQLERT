@@ -83,34 +83,6 @@ export default function Dashboard() {
         }
     }
 
-
-    /*     React.useEffect(() => {
-            const fetchDataAsync = async () => {
-                try {
-                    const result = await fetchData();
-                    if (result) {
-                        setGeophoneData(result);
-                    }
-                } catch (error) {
-                    console.error(error);
-                }
-            };
-    
-            fetchDataAsync();
-    
-        }, []);
-    
-        React.useEffect(() => {
-            setTestData({
-                labels: geophoneData.slice().reverse().map((data) => data.time),
-                datasets: [{
-                    label: "Geophone Value",
-                    data: geophoneData.slice().reverse().map((data) => data.geophone_value),
-                }],
-            });
-            checkGeophoneWarning(geophoneData);
-        }, [geophoneData]); */
-
     React.useEffect(() => {
         setTestData({
             labels: geophoneData.map((data) => data.time),
